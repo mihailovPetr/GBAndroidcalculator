@@ -4,10 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/cat"
+    android:background="@drawable/img"
     android:padding="@dimen/layout_padding"
     tools:context=".MainActivity">
 
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/editText_textSzie"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:textAlignment="textEnd"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="@dimen/textView_textSize"
+        app:layout_constraintStart_toStartOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <Button
         android:id="@+id/button_equals"
@@ -52,6 +72,7 @@
         android:backgroundTint="@color/button_standart_backgroundTint"
         android:text="@string/plus_minus"
         android:textSize="@dimen/button_standart_textSize"
+        android:visibility="invisible"
         app:cornerRadius="@dimen/button_cornerRadius"
         app:layout_constraintBottom_toBottomOf="@id/button_equals"
         app:layout_constraintEnd_toStartOf="@+id/button_0" />
@@ -210,7 +231,7 @@
         app:layout_constraintEnd_toStartOf="@id/button_multiply" />
 
     <Button
-        android:id="@+id/button_С"
+        android:id="@+id/button_C"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/button_marginEnd"
@@ -226,7 +247,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/button_marginEnd"
-        android:backgroundTint="@color/button_another_backgroundTint"
+        android:backgroundTint="@android:color/darker_gray"
+        android:enabled="false"
         android:text="@string/parentheses"
         android:textSize="@dimen/button_standart_textSize"
         app:cornerRadius="@dimen/button_cornerRadius"
@@ -238,7 +260,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/button_marginEnd"
-        android:backgroundTint="@color/button_another_backgroundTint"
+        android:backgroundTint="@android:color/darker_gray"
+        android:enabled="false"
         android:text="@string/percent"
         android:textSize="@dimen/button_standart_textSize"
         app:cornerRadius="@dimen/button_cornerRadius"
