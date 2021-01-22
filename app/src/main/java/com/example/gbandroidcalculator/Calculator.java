@@ -22,7 +22,7 @@ class Calculator {
             result = 0;
             return;
         }
-        if (c=='C'){
+        if (c == 'C') {
             expression.clear();
             digitBuffer.delete(0, digitBuffer.length());
             result = 0;

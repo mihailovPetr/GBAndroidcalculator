@@ -7,6 +7,6 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="button_standart_backgroundTint">#D81B60</color>
+    <color name="digit_buttons_backgroundTint">#D81B60</color>
     <color name="button_another_backgroundTint">#7CB342</color>
 </resources>

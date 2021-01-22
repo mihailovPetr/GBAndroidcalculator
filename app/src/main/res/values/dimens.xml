@@ -6,4 +6,5 @@
     <dimen name="layout_padding">15dp</dimen>
     <dimen name="editText_textSzie">80sp</dimen>
     <dimen name="textView_textSize">40sp</dimen>
+    <dimen name="zero_margin">0dp</dimen>
 </resources>

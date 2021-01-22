@@ -13,4 +13,29 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="MyTheme" parent="Theme.GBAndroidcalculator">
+        <item name="colorPrimary">@android:color/holo_blue_dark</item>
+    </style>
+
+    <style name="ButtonsStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">@dimen/button_marginEnd</item>
+        <item name="android:textSize">@dimen/button_standart_textSize</item>
+        <item name="cornerRadius">@dimen/button_cornerRadius</item>
+    </style>
+
+    <style name="DigitButtonsStyle" parent="ButtonsStyle">
+        <item name="android:backgroundTint">@color/digit_buttons_backgroundTint</item>
+    </style>
+
+    <style name="OperationButtonsStyle" parent="ButtonsStyle">
+        <item name="android:backgroundTint">@color/button_another_backgroundTint</item>
+    </style>
+
+    <style name="DisabledButtons" parent="ButtonsStyle">
+        <item name="android:enabled">false</item>
+        <item name="android:backgroundTint">@android:color/darker_gray</item>
+    </style>
 </resources>
