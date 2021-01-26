@@ -174,4 +174,13 @@
         app:layout_constraintBottom_toTopOf="@id/button_9"
         app:layout_constraintEnd_toStartOf="@id/button_divide" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_settings"
+        style="@style/ButtonsStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

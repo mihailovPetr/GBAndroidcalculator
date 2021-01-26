@@ -7,4 +7,5 @@
     <dimen name="editText_textSzie">80sp</dimen>
     <dimen name="textView_textSize">40sp</dimen>
     <dimen name="zero_margin">0dp</dimen>
+    <dimen name="settingsActivity_textView_size">24sp</dimen>
 </resources>

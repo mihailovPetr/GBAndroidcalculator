@@ -1,11 +1,14 @@
 package com.example.gbandroidcalculator;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -13,14 +16,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText editText;
     private TextView textView;
     private Calculator calculator;
-    StringBuilder expression;
+    private static final int REQUEST_CODE_SETTING_ACTIVITY = 99;
+    static final String APP_PREFERENCES = "SETTINGS";
+    static final String CURRENT_THEME = "CURRENT_THEME";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SharedPreferences sharedPreferences = getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE);
+        int theme = sharedPreferences.getInt(CURRENT_THEME, R.style.StandardTheme);
+        setTheme(theme);
+
+
         setContentView(R.layout.activity_main);
         calculator = new Calculator();
-        expression = new StringBuilder();
         initViews();
     }
 
@@ -53,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button button_C = findViewById(R.id.button_C);
         Button button_plus_minus = findViewById(R.id.button_plus_minus);
         Button button_point = findViewById(R.id.button_point);
+        Button buttonSettings = findViewById(R.id.button_settings);
 
         button0.setOnClickListener(this);
         button1.setOnClickListener(this);
@@ -74,7 +85,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button_C.setOnClickListener(this);
         button_plus_minus.setOnClickListener(this);
         button_point.setOnClickListener(this);
+        buttonSettings.setOnClickListener(buttonSettingsOnClickListener);
     }
+
+    private View.OnClickListener buttonSettingsOnClickListener = v -> {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivityForResult(intent, REQUEST_CODE_SETTING_ACTIVITY);
+    };
 
     @Override
     public void onClick(View v) {
@@ -135,4 +152,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textView.setText(calculator.getResult());
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode != REQUEST_CODE_SETTING_ACTIVITY || resultCode != RESULT_OK) {
+            return;
+        }
+
+        recreate();
+    }
 }

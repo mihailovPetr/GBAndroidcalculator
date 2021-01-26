@@ -20,4 +20,9 @@
     <string name="_0">0</string>
     <string name="point">,</string>
     <string name="equals">=</string>
+    <string name="choose_theme">Choose theme:</string>
+    <string name="standard_theme">Standard_theme</string>
+    <string name="orange_theme">Orange theme</string>
+    <string name="dark_theme">Dark theme</string>
+    <string name="ok_button_text">OK</string>
 </resources>

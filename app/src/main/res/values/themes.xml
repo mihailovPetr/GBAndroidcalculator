@@ -14,8 +14,16 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="MyTheme" parent="Theme.GBAndroidcalculator">
+    <style name="StandardTheme" parent="Theme.GBAndroidcalculator">
         <item name="colorPrimary">@android:color/holo_blue_dark</item>
+    </style>
+
+    <style name="OrangeTheme" parent="Theme.GBAndroidcalculator">
+        <item name="colorPrimary">@android:color/holo_orange_dark</item>
+    </style>
+
+    <style name="DarkTheme" parent="Theme.GBAndroidcalculator">
+        <item name="colorPrimary">@android:color/background_dark</item>
     </style>
 
     <style name="ButtonsStyle">
@@ -27,7 +35,7 @@
     </style>
 
     <style name="DigitButtonsStyle" parent="ButtonsStyle">
-        <item name="android:backgroundTint">@color/digit_buttons_backgroundTint</item>
+<!--        <item name="android:backgroundTint">@color/digit_buttons_backgroundTint</item>-->
     </style>
 
     <style name="OperationButtonsStyle" parent="ButtonsStyle">
